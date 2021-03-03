@@ -1,0 +1,6 @@
+<ul class="list-group" style="margin-top: 10px;">
+    <li *ngFor="let enrollee of enrolleeList" class="list-group-item" >
+      <!--Define the style to set the color of link based on activation status-->
+      <a [style.color]="enrollee.active === true ? 'green' : 'red'" [routerLink]="['/detail',enrollee.id]">{{ enrollee.name}}</a>
+    </li>
+</ul>

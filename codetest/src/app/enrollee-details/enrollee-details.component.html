@@ -1,0 +1,29 @@
+<h4>Enrollee Details</h4>
+
+
+<form [formGroup]="detailsForm" (ngSubmit)="onSubmit()"> 
+
+    <div class="mb-3">
+        <label for="enrolleeId" class="form-label">ID</label>
+        <input type="text" class="form-control" id="enrolleeId" formControlName="id" disabled>
+    </div>
+
+    <div class="mb-3">
+        <label for="enrolleeDob" class="form-label">Date of Birth</label>
+        <input type="text" class="form-control" id="enrolleeDob" formControlName="dateOfBirth" disabled>
+    </div>
+
+    <div class="mb-3">
+        <label for="enrolleeName" class="form-label">Name</label>
+        <input type="text" class="form-control" id="enrolleeName" formControlName="name">
+    </div>
+
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="enrolleeStatus" formControlName="active">
+      <label class="form-check-label" for="enrolleeStatus">Status</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <h6 *ngIf="displayMessage" style="margin-top:10px;"> {{ confirmMessage }}</h6>
