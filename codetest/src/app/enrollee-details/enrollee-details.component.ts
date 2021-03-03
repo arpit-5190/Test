@@ -1,7 +1,7 @@
 import { DenoapiService } from './../denoapi.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-enrollee-details',
@@ -19,11 +19,14 @@ export class EnrolleeDetailsComponent implements OnInit {
       //dateOfBirth:[{value:'',disabled:true}],
       id:[''],
       dateOfBirth:[''],
-      name:[''],
+      name:['',Validators.required],
       active:['']
     })
   }
 
+  get name(){
+    return this.detailsForm.get('name');
+  }
 
   
   ngOnInit() {
